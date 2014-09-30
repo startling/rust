@@ -646,11 +646,6 @@ impl<'a, 'tcx> BorrowckCtxt<'a, 'tcx> {
                     span,
                     format!("{} in a static location", prefix).as_slice());
             }
-            mc::AliasableManaged => {
-                self.tcx.sess.span_err(
-                    span,
-                    format!("{} in a `@` pointer", prefix).as_slice());
-            }
             mc::AliasableBorrowed => {
                 self.tcx.sess.span_err(
                     span,
